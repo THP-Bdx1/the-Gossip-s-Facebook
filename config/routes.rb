@@ -5,14 +5,12 @@ Rails.application.routes.draw do
     delete '/logout',  to: 'registrations#destroy'
 
 resources :users do
-
   resources :gossips do
-    #   resources :commentofcomments
-    # end
-    #resources :likes
     resources :comments
+  end
 end
- 
 
-end
+
+
+
 end

@@ -1,9 +1,8 @@
 <header>
-    <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-dark">
     <% if logged_in? == true %>
-    <h4>Salut <%=@name = User.find(@user.id).name%>, bienvenue sur ta session ! </h4> 
+    <h5><a href="https://cultofthepartyparrot.com/"><img src="http://image.noelshack.com/fichiers/2018/44/2/1540896122-parrot.gif" alt="partyparrot" height="40" width="40"> </a> Salut <%=current_user.name%>, bienvenue sur ta session ! </h5> 
     <% end %>
-    <a class="navbar-brand" href="https://cultofthepartyparrot.com/"><img src="http://image.noelshack.com/fichiers/2018/44/2/1540896122-parrot.gif" alt="partyparrot" height="40" width="40"> </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -14,9 +13,7 @@
                 <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips/new">Nouveau gossip</a></h2>
                 
                 <% if logged_in? == true %>
-                    <span class="text-muted">
-                      <h3><%= link_to "Log out", logout_path, method: :delete %></h3>
-                    </span>
+                <h1><button class="btn btn-danger btn-sm"><%= link_to "Log out", logout_path, method: :delete %></button></h1>
                 <% end %>
             </div>
         </div>

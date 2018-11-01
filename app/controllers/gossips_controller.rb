@@ -7,6 +7,8 @@ class GossipsController < ApplicationController
 
   def show
     @gossip=Gossip.find(params[:id])
+    @user= User.find(params[:user_id]) 
+    @comment = Comment.new
   end
 
   def update

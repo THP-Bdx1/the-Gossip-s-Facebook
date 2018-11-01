@@ -1,9 +1,9 @@
 <body style="margin-left: 25px">
-    <pre style="color: blue; font-weight: bold"><%= comment.anonymous_commentor %> : </pre><cite><%= comment.content %></cite>
+    <pre style="color: blue; font-weight: bold"><%= User.find(comment.user_id).name %> : </pre><cite><%= comment.content %></cite>
 <pre style="font-size: 90%">          - <%= time_ago_in_words(comment.created_at) %></pre>
 <p>
-    <%= link_to 'Delete',[comment.gossip, comment], method: :delete, data: { confirm: 'Êtes vous sûr ?'} %>
+   <% if comment.user_id == current_user.id %>
+    <%= link_to 'Delete',[comment.gossip.user, comment.gossip, comment], method: :delete, data: { confirm: "T'es sûr de sûr ?"} %>
+    <% end %>
 </p>
-<%= render @comment.comments %>
-<%= render 'commentofcomments/form' %>
 </body>
