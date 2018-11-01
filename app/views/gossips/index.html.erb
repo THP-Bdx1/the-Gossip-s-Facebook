@@ -9,6 +9,7 @@
             <td>Titre</td>            
             <td>Content</td>
             <td>Nombre de commentaires</td>
+            <td>Nombre de likes</td>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
         <td><%= gossip.title %></td>
         <td><%= gossip.content %></td>
         <td><%= gossip.comments.count %></td>
+        <td><%= gossip.likes.count %></td>
         <td>
             <a href="/users/<%=current_user.id%>/gossips/<%=gossip.id%>" class="btn btn-outline-dark">Voir le potin</a>
             <% if current_user.id == gossip.user_id %>
