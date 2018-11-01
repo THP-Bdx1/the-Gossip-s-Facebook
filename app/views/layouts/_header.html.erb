@@ -1,8 +1,7 @@
 <header>
-    <nav class="navbar navbar-dark bg-dark">
     <% if logged_in? == true %>
+    <nav class="navbar navbar-dark bg-dark">
     <h5><a href="https://cultofthepartyparrot.com/"><img src="http://image.noelshack.com/fichiers/2018/44/2/1540896122-parrot.gif" alt="partyparrot" height="40" width="40"> </a> Salut <%=current_user.name%>, bienvenue sur ta session ! </h5> 
-    <% end %>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -10,12 +9,10 @@
             <div class="navbar-nav">
                 <h2><a class="text-white" href="/users/<%=current_user.id%>/">Accueil </a> </h2>
                 <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips">Index des gossips </a> </h2>
-                <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips/new">Nouveau gossip</a></h2>
-                
-                <% if logged_in? == true %>
-                <h1><button class="btn btn-danger btn-sm"><%= link_to "Log out", logout_path, method: :delete %></button></h1>
-                <% end %>
+                <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips/new">Nouveau gossip</a></h2>       
+                <h1><button class="btn btn-danger btn-sm"><%= link_to "Log out", logout_path, method: :delete %></button></h1>    
             </div>
         </div>
     </nav>
+    <% end %>
 </header>
