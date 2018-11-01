@@ -33,4 +33,4 @@ Réalisé en collaboration avec :
 
 ## Lien vers le site en production
 
-Le site en production est consultable [ici]().
+Le site en production est consultable [ici](https://gossip-cruditay.herokuapp.com/).

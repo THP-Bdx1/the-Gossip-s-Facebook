@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     end
 
     def create
-        puts current_user.id
         @gossip = Gossip.find(params[:gossip_id])
         @comment=Comment.create!(user_id: current_user.id, gossip_id: @gossip.id, content: params[:comment][:content])
         puts @comment

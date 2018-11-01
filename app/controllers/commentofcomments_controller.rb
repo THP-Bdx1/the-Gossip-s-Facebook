@@ -1,16 +1,25 @@
 class CommentofcommentsController < ApplicationController
+    def new
+        @user=User.find(current_user.id)
+
+    end
+
     def create
         @gossip = Gossip.find(params[:gossip_id])
         @comment = Comment.find(params[:comment_id])
-        @commentofcomment=@comment.comments.create(params[:comment].permit(:content, :commentor))
-        redirect_to gossip_path(@gossip)
+        @commentofcomment=Commentofcomment.create!(user_id: current_user.id, comment_id: @comment.id, content: params[:commentofcomment][:content])
+        puts @commentofcomment
+        redirect_to "/users/#{current_user.id}/gossips/#{@gossip.id}"
     end
 
     def destroy
         @gossip = Gossip.find(params[:gossip_id])
         @comment = Comment.find(params[:comment_id])
-        @commentofcomment = @comment.comments.find(params[:id])
+        @commentofcomment = @comment.commentofcomments.find(params[:id])
         @commentofcomment.destroy
-        redirect_to gossip_path(@gossip)
+        redirect_to "/users/#{current_user.id}/gossips/#{@gossip.id}"
     end
+
 end
+
+

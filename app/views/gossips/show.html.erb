@@ -11,10 +11,13 @@
         <%= @gossip.content %>
 </blockquote></h2>
 <!-- #BOUTON LIKE -->
-<%# render 'likes/like' %> 
+<%= render 'likes/like' %> 
 <br>
+<!-- #COMPTEUR LIKE -->
+<p><%= @gossip.likes.count %> likes </p>
 <!-- #COMPTEUR COMMENTAIRE -->
 <p><%= @gossip.comments.count %> commentaires </p>
+<%@c=0%>
 <%= render @gossip.comments %>
 <h3>Ajouter un commentaire:</h3>
 <!-- #AJOUT COMMENTAIRE -->

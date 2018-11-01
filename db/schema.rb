@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 2018_11_01_125756) do
 
   create_table "commentofcomments", force: :cascade do |t|
     t.text "content"
-    t.bigint "gossip_id"
     t.bigint "user_id"
+    t.bigint "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["gossip_id"], name: "index_commentofcomments_on_gossip_id"
+    t.index ["comment_id"], name: "index_commentofcomments_on_comment_id"
     t.index ["user_id"], name: "index_commentofcomments_on_user_id"
   end
 

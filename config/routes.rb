@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 
 resources :users do
   resources :gossips do
-    resources :comments
+    resources :comments do
+      resources :commentofcomments
+    end
+    resources :likes
   end
 end
 

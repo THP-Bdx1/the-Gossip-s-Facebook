@@ -1,0 +1,9 @@
+<body style="margin-left: 25px">
+    <pre style="color: blue; font-weight: bold"><%= User.find(commentofcomment.user_id).name %> : </pre><cite><%= commentofcomment.content %></cite>
+<pre style="font-size: 90%">          - <%= time_ago_in_words(commentofcomment.created_at) %></pre>
+<p>
+   <% if commentofcomment.user_id == current_user.id %>
+    <%= link_to 'Delete',[commentofcomment.comment.gossip.user, commentofcomment.comment.gossip, commentofcomment.comment, commentofcomment], method: :delete, data: { confirm: "T'es sûr de sûr ?"} %>
+    <% end %>
+</p>
+</body>
