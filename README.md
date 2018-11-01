@@ -21,6 +21,10 @@ Il était demandé au site de contenir les specs suivantes :
 * Possibilité d'enlever un like déja mis
 * Commentaires et commentaires de commentaires
 
+## Problèmes non résolus
+
+Il semblerait qu'il soit impossible de Logout en utilisant Firefox.
+
 ## Membres de l'équipe
 
 Réalisé en collaboration avec : 

@@ -10,7 +10,7 @@
                 <h2><a class="text-white" href="/users/<%=current_user.id%>/">Accueil </a> </h2>
                 <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips">Index des gossips </a> </h2>
                 <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips/new">Nouveau gossip</a></h2>       
-                <h1><button class="btn btn-danger btn-sm"><%= link_to "Log out", logout_path, method: :delete %></button></h1>    
+                <h1><div class="logout" style="font-size: 75%;"><%= link_to "Log out", logout_path, method: :delete %></div></h1>    
             </div>
         </div>
     </nav>

@@ -10,7 +10,6 @@ class GossipsController < ApplicationController
     @user= User.find(params[:user_id]) 
     @comment = Comment.new
     @comments = @gossip.comments
-    puts "ICI CONNARD : #{Like.find_by(user_id: current_user.id)}"
     if Like.find_by(user_id: current_user.id, gossip_id: @gossip.id) == nil
       @like = Like.new
       @verif= true
