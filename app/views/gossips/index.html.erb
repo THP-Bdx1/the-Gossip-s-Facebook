@@ -22,7 +22,9 @@
         <td>
             <a href="/users/<%=current_user.id%>/gossips/<%=gossip.id%>" class="btn btn-outline-dark">Voir le potin</a>
             <a href="/users/<%=current_user.id%>/gossips/<%=gossip.id%>/edit" class="btn btn-warning">Éditer</a>
+            <% if current_user.id == gossip.user_id %>
             <a href="<%=user_gossip_path(current_user.id, gossip.id)%>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
+            <%end%>
         </td>
 
     </tr>
