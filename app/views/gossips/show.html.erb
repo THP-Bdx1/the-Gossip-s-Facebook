@@ -1,0 +1,11 @@
+<h1>Coucou <%= @gossip.anonymous_gossiper %></h1>
+<br><br>
+<h2>Voici ton gossip !<br><br></h2>
+<p><%= @gossip.content %></p>
+<br>
+<p><%= @gossip.comments.count %> commentaires </p>
+<%= render @gossip.comments %>
+<h3>Ajouter un commentaire:</h3>
+<%= render 'comments/form' %>
+
+<p><a href="<%= gossips_path %>" class="btn btn-primary">Revenir aux gossips</a></p>
