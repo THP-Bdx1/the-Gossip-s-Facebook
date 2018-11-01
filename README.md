@@ -1,24 +1,36 @@
-# README
+# THE GOSSIP PROJECT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![team bordeaux logo](http://image.noelshack.com/fichiers/2018/44/4/1541070879-thpbdx1.png)
 
-Things you may want to cover:
+### Disclaimer
 
-* Ruby version
+Réalisé avec beaucoup d'huile de coude et de techniques de schlag.
 
-* System dependencies
+## Présentation du projet
 
-* Configuration
+Le but du projet était de réaliser une application web "The Gossip Project" dans le cadre de la formation The Hacking Project ( semaine 5, jour 4 ). 
 
-* Database creation
+## Cahier des charges
 
-* Database initialization
+Il était demandé au site de contenir les specs suivantes :
 
-* How to run the test suite
+* Création d'utilisateur
+* Ecran de connexion avec nom de l'utilisateur et mot de passe
+* Un utilisateur peut détruire ses gossips (et uniquement les siens)
+* Possibilité de liker les potins
+* Possibilité d'enlever un like déja mis
+* Commentaires et commentaires de commentaires
 
-* Services (job queues, cache servers, search engines, etc.)
+## Membres de l'équipe
 
-* Deployment instructions
+Réalisé en collaboration avec : 
 
-* ...
+* François Flous
+* William Horel
+* Valérian Michelot
+* Paul Guérin
+* David Rangeard
+
+## Lien vers le site en production
+
+Le site en production est consultable [ici]().

@@ -13,9 +13,12 @@
  *= require_tree .
  *= require_self
  */
-p, h1, h2, h3{
+
+
+#header{
     font-family: American Typewriter, serif;
 }
+
 body {
     font-family: American Typewriter, serif;
     margin-top: 65px !important;
@@ -38,4 +41,3 @@ body {
     display: flex;
     flex-direction: row;
 }
-

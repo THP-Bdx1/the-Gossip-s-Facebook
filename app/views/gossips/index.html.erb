@@ -1,10 +1,12 @@
+<body style="padding-left:10px;padding-right:10px;">
 <h1>Nos gossips !</h1>
 
 <table class="table">
     <thead>
         <tr>
             <td>ID</td>
-            <td>Anonymous Gossiper</td>
+            <td>Gossiper</td>
+            <td>Titre</td>            
             <td>Content</td>
             <td>Nombre de commentaires</td>
         </tr>
@@ -13,15 +15,14 @@
     <% @gossips.each do |gossip| %>
     <tr>
         <td><%= gossip.id %></td>
-        <td><%= gossip.anonymous_gossiper %></td>
+        <td><%= gossip.user.name %></td>
+        <td><%= gossip.title %></td>
         <td><%= gossip.content %></td>
-                <td>
-                    <%= gossip.comments.count %>
-                </td>
+        <td><%= gossip.comments.count %></td>
         <td>
-            <a href="gossips/<%=gossip.id%>" class="btn btn-info">Voir le potin</a>
-            <a href="gossips/<%=gossip.id%>/edit" class="btn btn-primary">Éditer</a>
-            <a href="gossips/<%=gossip.id%>/delete" class="btn btn-danger">Supprimer</a>
+            <a href="/users/<%=current_user.id%>/gossips/<%=gossip.id%>" class="btn btn-outline-dark">Voir le potin</a>
+            <a href="/users/<%=current_user.id%>/gossips/<%=gossip.id%>/edit" class="btn btn-warning">Éditer</a>
+            <a href="<%=user_gossip_path(current_user.id, gossip.id)%>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
         </td>
 
     </tr>
@@ -30,8 +31,9 @@
 </table>
 
 <p>
-    <a href="gossip/new" class="btn btn-success">Créer ton nouveau gossip !</a>
+    <a href="/users/<%=current_user.id%>/gossips/new" class="btn btn-success">Créer ton nouveau gossip !</a>
 </p>
+</body>
 
 
 

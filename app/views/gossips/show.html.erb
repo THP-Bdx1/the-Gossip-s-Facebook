@@ -1,5 +1,7 @@
 <body style="margin-left: 10px"><!-- #NOM UTILISATEUR -->
-<h1>Voilà ton potin, <%= @gossip.anonymous_gossiper.capitalize %> !</h1>
+<h1>Voilà le potin de ses morts de <%=@gossip.user.name%>!</h1>
+<br><br>
+<h1>Titre de merde : <%=@gossip.title%></h1>
 <br><br>
 <!-- #GOSSIP CONTENT -->
 <h2><blockquote>
@@ -8,11 +10,7 @@
         <%= @gossip.content %>
 </blockquote></h2>
 <!-- #BOUTON LIKE -->
-<%# if current_user.like?(@gossip) %>
-<%# link_to "Like", gossip_likes_path(@gossip), method: :post %>
-<%# else %>
-<%# link_to "Like", gossip_likes_path(@gossip), method: :delete %>
-<%# end %>
+<%# render 'likes/like' %> 
 <br>
 <!-- #COMPTEUR COMMENTAIRE -->
 <p><%= @gossip.comments.count %> commentaires </p>
@@ -21,5 +19,5 @@
 <!-- #AJOUT COMMENTAIRE -->
 <%= render 'comments/form' %>
 
-<p><a href="/gossip" class="btn btn-primary">Revenir aux gossips</a></p>
+<p><a href="/users/<%=current_user.id%>/gossips" class="btn btn-primary">Revenir aux gossips</a></p>
 </body>

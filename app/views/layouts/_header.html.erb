@@ -1,32 +1,24 @@
-<header class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Acceuil</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/users/<%=params["id"]%>/gossips">Index des gossips</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/user/gossips/new">Nouveau gossip</a>
-                    </li>
-
-                </ul>
-                <span class="navbar-text">
-                    <% if logged_in? == true %>
-                    <li>
-                        <%= current_user.name %>
-                                    </li>
-                                                            
-                                        <li>
-                                            <%= link_to "Log out", logout_path, method: :delete %>
-                                        </li>
-                     <% end %>
-                    <a href="https://cultofthepartyparrot.com/"><img src="http://image.noelshack.com/fichiers/2018/44/2/1540896122-parrot.gif" alt="partyparrot" height="40" width="40"></a>
-                </span>
+<header>
+    <nav class="navbar navbar-dark bg-primary">
+    <% if logged_in? == true %>
+    <h4>Salut <%=@name = User.find(@user.id).name%>, bienvenue sur ta session ! </h4> 
+    <% end %>
+    <a class="navbar-brand" href="https://cultofthepartyparrot.com/"><img src="http://image.noelshack.com/fichiers/2018/44/2/1540896122-parrot.gif" alt="partyparrot" height="40" width="40"> </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <h2><a class="text-white" href="/users/<%=current_user.id%>/">Accueil </a> </h2>
+                <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips">Index des gossips </a> </h2>
+                <h2><a class="text-white" href="/users/<%=current_user.id%>/gossips/new">Nouveau gossip</a></h2>
+                
+                <% if logged_in? == true %>
+                    <span class="text-muted">
+                      <h3><%= link_to "Log out", logout_path, method: :delete %></h3>
+                    </span>
+                <% end %>
             </div>
-        </nav>         
-    </div>
+        </div>
+    </nav>
 </header>

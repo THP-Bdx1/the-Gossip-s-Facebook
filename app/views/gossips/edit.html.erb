@@ -1,6 +1,6 @@
-<h1>Édite ton nouveau gossip</h1>
+<body><h1>Édite ton nouveau gossip</h1>
 
-<%= form_for @gossip do |f| %>
+<%= form_for @gossip, url: {action: "update"} do |f| %>
 <div class="form-group">
     <%= f.text_field :anonymous_gossiper, placeholder: 'Ton pseudo "anonyme"', class: "form-control" %>
 </div>
@@ -8,6 +8,7 @@
     <%= f.text_area :content, placeholder: 'Ton vilain gossip', class: "form-control" %>
 </div>
 <div class="form-group">
-    <button class="btn btn-primary" type="submit">Modifier le gossip</button>
+    <button class="btn btn-warning" type="submit">Modifier le gossip</button>
 </div>
 <% end %>
+</body>

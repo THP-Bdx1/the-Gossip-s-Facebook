@@ -6,8 +6,9 @@ class UsersController < ApplicationController
 
    def create    
     @user = User.create(user_params)
-    redirect_to user_path(@user.id)
     login @user
+    flash.now[:success] = "C'est good !"
+    redirect_to user_path(@user.id)
   end
 
   def show

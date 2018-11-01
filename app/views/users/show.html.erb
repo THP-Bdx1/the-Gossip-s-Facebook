@@ -1,9 +1,9 @@
 <h1>Bienvenue
     <%= @user.name %>
 </h1>
-<div class="center jumbotron">
-<div class="button_gossip">
-<%= link_to "GOSSIPS", "gossips", class: "btn btn-secondary btn-lg" %>
+<div class="button_login">   
+<a class="btn btn-primary btn-lg" href="/users/<%=@user.id%>/gossips/" role="button">GOSSIPS</a>
+</div>
 </div>
     <%= link_to "Reviens à l'accueil", '/', class: "btn btn-lg btn-primary" %>
 </div>

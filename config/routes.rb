@@ -6,8 +6,7 @@ Rails.application.routes.draw do
 
 resources :users do
 
-  
-  resources :gossips do# do
+  resources :gossips do
     #   resources :commentofcomments
     # end
     #resources :likes

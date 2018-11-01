@@ -2,6 +2,7 @@ class GossipsController < ApplicationController
 
   def index
   @gossips=Gossip.all
+  @user= User.find(params[:user_id])
   end
 
   def show
@@ -11,13 +12,14 @@ class GossipsController < ApplicationController
   def update
     @gossip=Gossip.find(params[:id])
     @gossip.update(gossip_params)
-    redirect_to gossip_path(@gossip.id)
+    redirect_to "/users/#{current_user.id}/gossips/"
   end
 
   def destroy
     @gossip=Gossip.find(params[:id])
+    @user = @gossip.user
     @gossip.destroy
-    redirect_to gossips_path(@gossip.id)
+    redirect_to "/users/#{current_user.id}/gossips/"
   end
 
   def new
@@ -29,13 +31,13 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.create(gossip_params)
-    redirect_to gossip_path(@gossip.id)
+    @gossip = Gossip.create(user_id: current_user.id, content: params[:gossip][:content], title: params[:gossip][:title])
+    redirect_to "/users/#{current_user.id}/gossips/"
   end
 
   private
-  
   def gossip_params
-  params.require(:gossip).permit(:anonymous_gossiper, :content)
-  end
+    params.require(:gossip).permit(:title, :content)
+    end
+
 end
