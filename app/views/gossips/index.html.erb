@@ -19,8 +19,9 @@
                     <%= gossip.comments.count %>
                 </td>
         <td>
-            <a href="<%= edit_gossip_path(gossip.id)%>" class="btn btn-primary">Éditer</a>
-            <a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" data-method="delete">Supprimer</a>
+            <a href="gossips/<%=gossip.id%>" class="btn btn-info">Voir le potin</a>
+            <a href="gossips/<%=gossip.id%>/edit" class="btn btn-primary">Éditer</a>
+            <a href="gossips/<%=gossip.id%>/delete" class="btn btn-danger">Supprimer</a>
         </td>
 
     </tr>
@@ -29,7 +30,7 @@
 </table>
 
 <p>
-    <a href="<%= new_gossip_path %>" class="btn btn-success">Créer ton nouveau gossip !</a>
+    <a href="gossip/new" class="btn btn-success">Créer ton nouveau gossip !</a>
 </p>
 
 

@@ -1,17 +1,32 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <nav>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <%= link_to "Accueil",   '/' %>
-                </li>
-                <li>
-                    <%= link_to "Index des gossips",   gossips_path %>
-                </li>
-                <li>
-                    <%= link_to "Nouveau gossip", new_gossip_path %>
-                </li>
-            </ul>
-        </nav>
+<header class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Acceuil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/users/<%=params["id"]%>/gossips">Index des gossips</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/user/gossips/new">Nouveau gossip</a>
+                    </li>
+
+                </ul>
+                <span class="navbar-text">
+                    <% if logged_in? == true %>
+                    <li>
+                        <%= current_user.name %>
+                                    </li>
+                                                            
+                                        <li>
+                                            <%= link_to "Log out", logout_path, method: :delete %>
+                                        </li>
+                     <% end %>
+                    <a href="https://cultofthepartyparrot.com/"><img src="http://image.noelshack.com/fichiers/2018/44/2/1540896122-parrot.gif" alt="partyparrot" height="40" width="40"></a>
+                </span>
+            </div>
+        </nav>         
     </div>
 </header>

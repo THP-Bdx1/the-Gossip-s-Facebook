@@ -13,6 +13,29 @@
  *= require_tree .
  *= require_self
  */
-body {
-    margin-top: 50px !important;
+p, h1, h2, h3{
+    font-family: American Typewriter, serif;
 }
+body {
+    font-family: American Typewriter, serif;
+    margin-top: 65px !important;
+}
+.accueil{
+    font-family: American Typewriter, serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center
+}
+.button_inscription{
+    margin: 25px;
+}
+.button_login{
+    margin: 25px;
+}
+.logo_accueil{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
+}
+

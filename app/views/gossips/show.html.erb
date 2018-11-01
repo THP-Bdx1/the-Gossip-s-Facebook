@@ -1,11 +1,25 @@
-<h1>Coucou <%= @gossip.anonymous_gossiper %></h1>
+<body style="margin-left: 10px"><!-- #NOM UTILISATEUR -->
+<h1>Voilà ton potin, <%= @gossip.anonymous_gossiper.capitalize %> !</h1>
 <br><br>
-<h2>Voici ton gossip !<br><br></h2>
-<p><%= @gossip.content %></p>
+<!-- #GOSSIP CONTENT -->
+<h2><blockquote>
+        <img src="http://image.noelshack.com/fichiers/2018/44/4/1541076385-silent-clipart-whispers-10.png" 
+        height="30" width="30">
+        <%= @gossip.content %>
+</blockquote></h2>
+<!-- #BOUTON LIKE -->
+<%# if current_user.like?(@gossip) %>
+<%# link_to "Like", gossip_likes_path(@gossip), method: :post %>
+<%# else %>
+<%# link_to "Like", gossip_likes_path(@gossip), method: :delete %>
+<%# end %>
 <br>
+<!-- #COMPTEUR COMMENTAIRE -->
 <p><%= @gossip.comments.count %> commentaires </p>
 <%= render @gossip.comments %>
 <h3>Ajouter un commentaire:</h3>
+<!-- #AJOUT COMMENTAIRE -->
 <%= render 'comments/form' %>
 
-<p><a href="<%= gossips_path %>" class="btn btn-primary">Revenir aux gossips</a></p>
+<p><a href="/gossip" class="btn btn-primary">Revenir aux gossips</a></p>
+</body>
